@@ -2,6 +2,16 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 const Statistics = ({good,neutral,bad}) => {
+  if(good===0&&bad===0&&neutral===0){
+    return (
+      <div>
+        <h1>statistics</h1>
+        <div>
+          <p>No feedback given</p>
+        </div>
+      </div>
+    );
+  }
   let all = good+neutral+bad;
   let average = (good-bad)/all;
   let positive = (good*100/all);
